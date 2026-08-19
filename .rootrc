@@ -1,0 +1,18 @@
+# shell
+
+# env
+export TMOUT=600
+export PS1='\$ '
+#export HISTFILE=$HOME/.history
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+
+# aliases
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias grep="grep -i"
+alias rsync="rsync -a --info=progress2"
+alias p="pwd"
+

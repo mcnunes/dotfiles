@@ -1,0 +1,124 @@
+## me
+
+## locale
+#export LANG="en_US.UTF-8"
+#export LC_CTYPE="en_US.UTF-8"
+#export LC_COLLATE="C.UTF-8"
+
+## umask
+# umask 0027
+
+# history settings
+#export HISTFILE=/home/mns/.history
+export HISTCONTROL=ignoreboth
+export HISTSIZE=1000
+export HISTFILESIZE=2000
+# export HISTTIMEFORMAT="%d/%m/%Y-%H:%M  -->  "
+# export PAGER=less
+
+# some definitions
+mux="tmux"
+mop="top -d2 -c"
+xerr="tail -f ~/.xsession-errors"
+tailf="sudo /usr/bin/tail -f /var/log/{messages,syslog}"
+
+## aliases
+alias ls="/usr/bin/ls -F -b -T 0 --color=never"
+alias perltidy="perltidy -pbp -nst"
+alias grep="grep -i"
+alias rsync="rsync -a --info=progress2"
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="rm -i"
+alias ifconfig="/sbin/ifconfig"
+alias mysql="mysql --auto-rehash"
+# alias curl='$(which grep) --preprox socks5://10.83.18.9:8282'
+alias tm="$mux new-session -s mir -d $mop \; splitw -d $tailf \; splitw -h -t 1 -d $xerr \; neww \; attach"
+alias tw="$mux new-session -s wittel \; neww"
+alias su="sudo su -"
+alias weather='curl https://wttr.in/Maceio'
+alias youtube-dl='yt-dlp --force-ipv4 --geo-bypass --limit-rate 300k'
+alias virsh='/usr/bin/virsh --connect qemu:///system'
+alias rcmount='rclone mount gdrive:/ /home/mns/gdriver/ --vfs-cache-mode full --no-modtime'
+#alias chrome='ENABLE_WASM=1 chrome --enable-wasm --ignore-gpu-blacklist --proxy-server="socks5://127.0.0.1:1080"'
+alias p="pwd"
+alias vpy=". $HOME/.vpy/bin/activate"
+alias mpv="mpv --no-video"
+alias cc="/usr/bin/cc -Wall"
+#alias rdpgames="rdesktop -f -r sound:remote -u testes -p 'some_pass' -a 16 -z -P -x modem -r clipboard:PRIMARYCLIPBOARD -M -k pt-br 192.168.0.16"
+alias listen="netstat -ln -f inet"
+alias trans="trans -b :pt-BR"
+alias rdon="xrandr --output HDMI-2 --above LVDS-1 --auto --output LVDS-1 --auto"
+alias rdoff="xrandr --output HDMI-2 --off --output LVDS-1 --auto"
+alias brightdown="xrandr --output HDMI-1 --brightness 0.90"
+alias zzz="sudo zzz;slock"
+alias ZZZ="sudo ZZZ;slock"
+#alias chrome="chrome --ignore-gpu-blacklist"
+
+# PS1
+export PS1='\$ '
+
+## proxy
+# export {f,ht}tp{,s}_proxy="http://127.0.0.1:3128/"
+# export {f,ht}tp{,s}_proxy="http://172.19.22.53:8123/"
+
+## local docker server
+#export DOCKER_HOST=ssh://192.168.0.10
+#export DOCKER_BUILDKIT=1
+#alias docker="sudo /usr/bin/docker"
+
+# Perl
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+
+## Java
+# export _JAVA_AWT_WM_NONREPARENTING=1
+#export JAVA_FONTS='/usr/local/share/fonts/roboto'
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
+alias javac="javac -Werror"
+
+# dotnet			      
+#export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# python
+# pyenv
+### install deps to build other python versions
+### make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev
+### libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev
+### libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+# aws
+export SAM_CLI_TELEMETRY=0
+#export AWS_ACCESS_KEY_ID=""
+#export AWS_SECRET_ACCESS_KEY=""
+#export AWS_DEFAULT_REGION="us-east-1"
+#
+
+# PATH
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export AIRFLOW_HOME=~/airflow
+
+# golang
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+# source other files
+. ~/.dbrc
+# . ~/.venvrc
+. ~/.raws
+# . ~/.aliases
+. ~/.blackrc
+
+# terraform
+if [ -f /usr/bin/terraform ]; then
+    complete -C /usr/bin/terraform terraform
+fi
+
+# awscli
+if [ -f /usr/bin/aws_completer ]; then  
+    complete -C /usr/bin/aws_completer aws
+fi

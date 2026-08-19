@@ -1,0 +1,100 @@
+### cwm
+fontname "Input Sans Compressed:style=Regular:pixelsize=12:antialias=true:autohint=true"
+
+sticky yes
+
+# colors
+color menubg "#202020"
+color menufg "#323232"
+color font "#ffffff"
+
+# ignore window
+#ignore dunst
+# ignore xclock
+
+# Size of htile and vtile, in %
+htile			50
+vtile			50
+
+gap 2 2 2 2
+
+#autogroup 1 "Emacs,Emacs"
+#autogroup 2 "st-256color,st-256color"
+autogroup 2 "lxterminal,Lxterminal"
+autogroup 9 "Navigator,firefox"
+autogroup 9 "chromium-browser,Chromium-browser"
+#autogroup 3 "libreoffice,libreoffice-calc"
+#autogroup 3 "libreoffice,libreoffice-writer"
+#autogroup 3 "libreoffice,libreoffice-startcenter" 
+#autogroup 4 "rdesktop,rdesktop"
+#autogroup 4 "vncviewer,Ssvnc"
+
+### shortcuts
+## windows
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-4 group-only-4
+bind-key 4-5 group-only-5
+bind-key 4-6 group-only-6
+bind-key 4-7 group-only-7
+bind-key 4-8 group-only-8
+bind-key 4-9 group-only-9
+bind-key 4-Tab group-last
+
+bind-key 4S-0 window-movetogroup-0
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-4 window-movetogroup-4
+bind-key 4S-5 window-movetogroup-5
+bind-key 4S-6 window-movetogroup-6
+bind-key 4S-7 window-movetogroup-7
+bind-key 4S-8 window-movetogroup-8
+bind-key 4S-9 window-movetogroup-9
+
+bind-key 4S-q quit
+bind-key 4S-r restart
+bind-key 4S-s window-stick
+bind-key 4-l slock
+bind-key 4-h window-hide
+bind-key 4-a window-maximize
+bind-key 4-p menu-exec
+#bind-key 4-j window-cycle
+#bind-key 4-k window-rcycle
+bind-key 4-o menu-window
+#bind-key 4-Left window-snap-left
+#bind-key 4-Right window-snap-right
+bind-key 4-Left window-vtile
+
+bind-key 4M-h		window-snap-left
+bind-key 4M-j		window-snap-down
+bind-key 4M-k		window-snap-up
+bind-key 4M-l		window-snap-right
+
+## apps
+bind-key 4-Return 'st -T st -e /bin/ksh -l'
+
+## app menu
+# command chrome "xterm -e google-chrome"
+ 
+## unbind
+# unbind-key CM-Delete
+#unbind-key M-Tab
+unbind-key M-h
+unbind-key M-j
+unbind-key M-Left
+unbind-key M-Right
+unbind-key M-Up
+unbind-key M-Down
+unbind-key CM-m
+#unbind-key M-slash 
+unbind-key C-slash
+unbind-key 4S-p
+
+## extra keybinds
+# bind-key XF86AudioRaiseVolume "~/bin/volume.pl up"
+# bind-key XF86AudioLowerVolume "~/bin/volume.pl down"
+# bind-key XF86AudioMute        "~/bin/volume.pl mute"
+bind-key 4S-p "~/bin/pshot.pl single"
+#bind-key M-e "/usr/local/bin/st -n 'Emacs' -c 'Emacs' -T Emacs -e /usr/local/bin/emacsclient -c -t"
