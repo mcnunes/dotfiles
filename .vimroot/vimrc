@@ -1,0 +1,29 @@
+"" source files
+source /usr/local/share/vim/vim92/defaults.vim
+
+source /root/.vim/config/run.vim
+source /root/.vim/config/face.vim
+source /root/.vim/config/keybinds.vim
+
+set title
+set nocompatible
+set backspace=indent,eol,start
+set history=100
+set ruler
+set showcmd
+set incsearch
+set hlsearch
+set ignorecase
+set wildmenu
+set expandtab
+set smartcase
+set mouse=""
+
+filetype plugin indent on
+set autoindent
+
+" Explorer style
+let g:netrw_listyle= 4
+
+" set backup dir
+set backupdir=/home/mns/Documents/backups

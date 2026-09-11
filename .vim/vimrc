@@ -1,0 +1,54 @@
+"" source files
+source /usr/share/vim/vim92/defaults.vim
+
+source $HOME/.vim/config/run.vim
+source $HOME/.vim/config/face.vim
+source $HOME/.vim/config/keybinds.vim
+source $HOME/.vim/config/pyme.vim
+source $HOME/.vim/config/myc.vim
+
+"" my
+set title
+set nocompatible
+set backspace=indent,eol,start
+set history=100
+set ruler
+set showcmd
+set incsearch
+set hlsearch
+set ignorecase
+set wildmenu
+set expandtab
+set smartcase
+set mouse=""
+set nu
+set rnu
+set cursorline
+set wrap
+
+set textwidth=80
+"set colorcolumn=80
+
+filetype plugin indent on
+set autoindent
+
+"" clipboard
+set clipboard=unnamedplus
+
+"" fold
+let g:vim_markdown_folding_level = 0
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_style_pythonic = 1
+
+"" Explorer style
+let g:netrw_listyle= 4
+
+"" set backup dir
+set backupdir=/home/mns/Documents/backups
+
+"" colorscheme
+"colorscheme codedark
+
+" vim orgmode
+"packloadall
+"silent! helptags ALL

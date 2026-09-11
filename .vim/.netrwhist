@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/mns/Documents/cruzeiro-do-sul/design_profissional'
+let g:netrw_dirhist_2='/home/mns/bin/perl'
+let g:netrw_dirhist_1='/home/mns/Documents/marlon'
